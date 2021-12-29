@@ -1,0 +1,9 @@
+textarea {
+    width: 100%;
+    font-family: 'Courier New', monospace;
+    margin-top: 0.5em;
+}
+
+.result {
+    padding: 1em;
+}

@@ -1,0 +1,17 @@
+<div class="row">
+
+    <div class="col-md-12" *ngFor="let section of sections; index as i;">
+        <textarea class="form-control" rows="3">{{ section.code }}</textarea>
+        <div class="result"></div>
+    </div>
+
+    <div class="col-md-12">
+        <a class="btn btn-success" style="cursor: pointer;  color: white; width: 10em; margin-right: 1em;">
+            Save
+        </a>
+        <a class="btn btn-info" style="cursor: pointer; color: white; width: 10em;" onclick="runCode()">
+            Run
+        </a>
+    </div>
+
+</div>
