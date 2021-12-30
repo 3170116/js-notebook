@@ -14,9 +14,20 @@ export class SectionsListComponent implements OnInit {
 
   ngOnInit(): void {
     var section = {
-      code: "console.log('Hello world!');"
+      code: "'Hello world!';"
     } as CodeSection;
     this.sections.push(section);
+  }
+
+  addCodeSection(i: number): void {
+    var section = {
+      code: "'Hello world!';"
+    } as CodeSection;
+    this.sections.splice(i + 1, 0, section);
+  }
+
+  removeCodeSection(i: number): void {
+    this.sections.splice(i, 1);
   }
 
 }

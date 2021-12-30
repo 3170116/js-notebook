@@ -1,17 +1,30 @@
 <div class="row">
 
-    <div class="col-md-12" *ngFor="let section of sections; index as i;">
-        <textarea class="form-control" rows="3">{{ section.code }}</textarea>
+    <div class="section col-md-12" style="margin-top: 0.5em;" *ngFor="let section of sections; index as i;">
+        <div class="row">
+            <div class="col-md-9">
+                <textarea class="code form-control" rows="3">{{ section.code }}</textarea>
+            </div>
+            <div class="col-md-3 align-self-end">
+                <a class="btn btn-success" style="cursor: pointer; color: white; margin-right: 1em;" (click)="addCodeSection(i)">
+                    <i class="fa fa-plus"></i>
+                </a>
+                <a class="btn btn-danger" style="cursor: pointer;" *ngIf="sections.length > 1" (click)="removeCodeSection(i)">
+                    <i class="fa fa-trash"></i>
+                </a>
+            </div>
+        </div>
         <div class="result"></div>
     </div>
 
     <div class="col-md-12">
-        <a class="btn btn-success" style="cursor: pointer;  color: white; width: 10em; margin-right: 1em;">
-            Save
+        <a class="btn btn-info" style="cursor: pointer; color: white; width: 10em; margin-right: 1em;" onclick="runCode()">
+            <i class="fa fa-play"></i> Run
         </a>
-        <a class="btn btn-info" style="cursor: pointer; color: white; width: 10em;" onclick="runCode()">
-            Run
+        <a class="btn btn-success" style="cursor: pointer;  color: white; width: 10em;">
+            <i class="fa fa-save"></i> Save
         </a>
+        
     </div>
 
 </div>
