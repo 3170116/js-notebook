@@ -24,6 +24,10 @@
       for (let i = 0; i < results.length; i++) {
         try {
           results[i].innerHTML = eval(codes[i].value);
+
+          if (results[i].innerHTML == 'undefined') {
+            results[i].innerHTML = '';
+          }
         } catch (err) {
           results[i].innerHTML = err;
         }
